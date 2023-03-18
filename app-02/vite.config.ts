@@ -1,29 +1,42 @@
+import path from "path";
 import { defineConfig } from "vite";
-import qiankun from "vite-plugin-qiankun";
 import vue from "@vitejs/plugin-vue";
+import qiankun from "vite-plugin-qiankun";
 
-// useDevMode 开启时与热更新插件冲突
-const useDevMode = true;
 // https://vitejs.dev/config/
-export default ({ mode }) => {
-  const __DEV__ = mode === "development";
-  return defineConfig({
-    plugins: [
-      vue(),
-      qiankun("sub-app-02", {
-        useDevMode: true,
-      }),
-    ],
-    server: {
-      port: 8082,
-      host: "0.0.0.0",
-      // 设置源是因为图片资源会找错位置所以通过这个让图片等资源不会找错
-      origin: "//localhost:8082",
-      cors: true,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
+export default defineConfig({
+  root: process.cwd(), // default
+  base: "./",
+  publicDir: "public", // default
+  cacheDir: "node_modules/.vite", // default
+  // 定义全局常量替换方式
+  define: {},
+  envDir: "./env", // 环境变量的存储路径
+  logLevel: "info", // default
+  clearScreen: false, // 默认值为true。调试时设置为false，可以看到更多信息
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src"),
     },
-    base: __DEV__ ? "/" : "//localhost:8082",
-  });
-};
+  },
+  plugins: [
+    vue(),
+    qiankun("app-02", {
+      useDevMode: true,
+    }),
+  ],
+  build: {
+    outDir: path.resolve(__dirname, "dist"),
+    assetsDir: "static",
+    emptyOutDir: false,
+    target: "esnext", // default，最低为es2015
+    cssCodeSplit: true, // default
+    sourcemap: false, // default
+  },
+  server: {
+    host: "0.0.0.0",
+    port: 8082,
+    cors: true,
+    // origin: "http://localhost:8081",
+  },
+});

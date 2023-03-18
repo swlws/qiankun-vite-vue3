@@ -26,25 +26,6 @@ export default defineConfig({
     target: "esnext", // default，最低为es2015
     cssCodeSplit: true, // default
     sourcemap: false, // default
-    // 最小化混淆。terser速度慢、文件体积小；esbuild速度快、文件体积大
-    // minify: "terser",
-    // terserOptions: {
-    //   compress: {
-    //     keep_infinity: true,
-    //     // 去除打印
-    //     drop_console: true,
-    //   },
-    // },
-    // // chunk 大小警告的限制（以 kbs 为单位）。
-    // chunkSizeWarningLimit: 1024,
-    // rollupOptions: {
-    //   output: {
-    //     manualChunks: {
-    //       vue: ["vue"],
-    //       // vue: ["vue", "vue-router"],
-    //     },
-    //   },
-    // },
   },
   server: {
     host: "0.0.0.0",
