@@ -1,6 +1,8 @@
 # vite + vue3 + qiankun
 
-目前`qiankun`不支持`vite`，需要借助插件`vite-plugin-qiankun`实现.
+目前`qiankun`不支持`vite`，需要借助插件`vite-plugin-qiankun`实现。
+
+[demo 效果](https://swlws.github.io/qiankun-vite-vue3)
 
 # 启动方式
 
@@ -24,7 +26,7 @@ cd app-02 && pnpm dev
 > ./build
 ```
 
-打包脚本执行后，会在当前目录产生一个`html`文件夹，直接部署到 Nginx 即可。html 的文件夹结构：
+打包脚本执行后，会在当前目录产生一个`docs`文件夹，html 的文件夹结构：
 
 ```bash
 html
@@ -33,6 +35,14 @@ html
     app-01
     app-02
 ```
+
+直接部署到 Nginx 即可，或者可以本地启动，查验效果：
+
+```bash
+> cd html && serve . -p 5500
+```
+
+在浏览器访问即可。
 
 # 坑点
 
