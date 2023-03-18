@@ -1,11 +1,11 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="//localhost:8082/vite.svg">
+    <link rel="icon" type="image/svg+xml" href="/sub/app-02/vite.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Micro Web</title>
-    <script crossorigin="">import('//localhost:8082/assets/index-b8890956.js').finally(() => {
+    <script crossorigin="">import('/sub/app-02/static/index-cb440182.js').finally(() => {
             
-    const qiankunLifeCycle = window.moudleQiankunAppLifeCycles && window.moudleQiankunAppLifeCycles['sub-app-02'];
+    const qiankunLifeCycle = window.moudleQiankunAppLifeCycles && window.moudleQiankunAppLifeCycles['app-02'];
     if (qiankunLifeCycle) {
       window.proxy.vitemount((props) => qiankunLifeCycle.mount(props));
       window.proxy.viteunmount((props) => qiankunLifeCycle.unmount(props));
@@ -33,8 +33,8 @@
   const update = createDeffer('update');
 
   ;(global => {
-    global.qiankunName = 'sub-app-02';
-    global['sub-app-02'] = {
+    global.qiankunName = 'app-02';
+    global['app-02'] = {
       bootstrap,
       mount,
       unmount,

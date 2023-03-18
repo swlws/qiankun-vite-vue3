@@ -6,7 +6,10 @@ import qiankun from "vite-plugin-qiankun";
 // https://vitejs.dev/config/
 export default defineConfig({
   root: process.cwd(), // default
-  base: "./",
+  // base: ".",
+  // base: "http://localhost:5500/sub/app-01",
+  // 打包时，这里填充的为绝对路径，对应的是部署路径
+  base: "/sub/app-01",
   publicDir: "public", // default
   cacheDir: "node_modules/.vite", // default
   // 定义全局常量替换方式
