@@ -2,8 +2,6 @@
 
 目前`qiankun`不支持`vite`，需要借助插件`vite-plugin-qiankun`实现。
 
-[demo 效果](https://swlws.github.io/qiankun-vite-vue3)
-
 # 启动方式
 
 ```bash
@@ -42,7 +40,7 @@ html
 > cd html && serve . -p 5500
 ```
 
-在浏览器访问即可。
+在浏览器访问`http://localhost:5500`，查看效果。
 
 # 坑点
 
