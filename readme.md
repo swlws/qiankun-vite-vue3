@@ -24,7 +24,7 @@ cd app-02 && pnpm dev
 > ./build
 ```
 
-打包脚本执行后，会在当前目录产生一个`docs`文件夹，html 的文件夹结构：
+打包脚本执行后，会在当前目录产生一个`html`文件夹，html 的文件夹结构：
 
 ```bash
 html
